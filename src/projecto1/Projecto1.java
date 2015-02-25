@@ -13,7 +13,6 @@ public class Projecto1 {
     private Terreno[][] mundo = new Terreno[51][51];
     private int tempo = 0;
     
-    
     public static void main(String[] args) {
         
     }
