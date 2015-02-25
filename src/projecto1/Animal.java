@@ -12,10 +12,11 @@ public abstract class Animal {
     }
     
     public abstract void movimenta(Terreno mundo[][]);
-
+    
+    //Metodos
     public boolean nascimento(float prob){
-        Random numero = new Random();
-        return numero.nextFloat() < prob;
+        Random rand = new Random();
+        return rand.nextFloat() < prob;
     }
     
     

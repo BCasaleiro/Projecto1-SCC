@@ -7,7 +7,7 @@ public class Terreno {
     private Animal animal;
  
     //Construtores
-    public Terreno(boolean vegetacao) {
+    public Terreno() {
         Random rand = new Random();
         if(rand.nextFloat() > 0.5) {
             estadoVegetacao = 30;
@@ -16,9 +16,18 @@ public class Terreno {
         }
     }
     
-    public boolean isEstadoMax(){
+    //Metodos
+    public boolean isEstadoMax() {
         return this.estadoVegetacao == 30;
     }
+    
+    public int incrementaEstado() {
+        return (++this.estadoVegetacao);
+    }
+    
+    public void vegetacaoComida() {
+        this.estadoVegetacao = 0;
+    } 
     
     //Sets & Gets
     public Animal getAnimal() {
