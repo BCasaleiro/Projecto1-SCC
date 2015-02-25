@@ -14,5 +14,7 @@ public class Simulacao {
     private int tempo = 0;
 
     public Simulacao() {
+    
     }
+    
 }
