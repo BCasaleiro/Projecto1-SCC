@@ -1,6 +1,7 @@
 package projecto1;
 
 import java.util.Random;
+import java.util.ArrayList;
 
 public class Lobo extends Animal {
     
@@ -8,7 +9,8 @@ public class Lobo extends Animal {
     private final int energiaInicial = 7;
     
     //Construtores
-    public Lobo() {
+    public Lobo(int x,int y) {
+        super(x,y);
         Random rand = new Random();
         this.energia = rand.nextInt(energiaInicial);
     }
@@ -20,7 +22,9 @@ public class Lobo extends Animal {
     }
 
     @Override
-    public void alimentaSe(Terreno[][] mundo) {
-        
+    public void alimentaSe(Terreno[][] mundo, Animal animais) {
+        for (Animal a : animais){
+            
+        }
     }
 }
