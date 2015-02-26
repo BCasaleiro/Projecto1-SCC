@@ -2,6 +2,7 @@ package projecto1;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.lang.Math;
 
 public abstract class Animal {
     
@@ -21,7 +22,6 @@ public abstract class Animal {
     //Metodos
     public abstract boolean isOvelha();
     public abstract void movimenta(Terreno mundo[][]);
-    public abstract void alimentaSe(Terreno mundo[][]);
     public abstract void alimentaSe(Terreno mundo[][], ArrayList<Animal> animais);
     
     public void decrementaEnergia() {
@@ -40,6 +40,10 @@ public abstract class Animal {
     public void morte(Terreno mundo[][], ArrayList<Animal> animais) {
         mundo[this.x - 1][this.y - 1].setAnimal(null);
         animais.remove(this);
+    }
+    
+    public float distancia(Animal animal){
+        return (float)Math.sqrt(Math.pow(this.x - animal.getX(), 2) + Math.pow(this.y - animal.getY(), 2));
     }
     
     //Sets & Gets

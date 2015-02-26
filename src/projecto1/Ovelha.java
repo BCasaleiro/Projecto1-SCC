@@ -1,5 +1,6 @@
 package projecto1;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Ovelha extends Animal {
@@ -16,12 +17,17 @@ public class Ovelha extends Animal {
     
     //Metodos
     @Override
+    public boolean isOvelha(){
+        return true;
+    }
+    
+    @Override
     public void movimenta(Terreno mundo[][]) {
         
     }
 
     @Override
-    public void alimentaSe(Terreno[][] mundo) {
+    public void alimentaSe(Terreno[][] mundo, ArrayList<Animal> animais) {
         
     }
 }
