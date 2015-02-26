@@ -21,7 +21,6 @@ public abstract class Animal {
     //Metodos
     public abstract boolean isOvelha();
     public abstract void movimenta(Terreno mundo[][]);
-    public abstract void alimentaSe(Terreno mundo[][]);
     public abstract void alimentaSe(Terreno mundo[][], ArrayList<Animal> animais);
     
     public void decrementaEnergia() {

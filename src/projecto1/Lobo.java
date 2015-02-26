@@ -35,4 +35,6 @@ public class Lobo extends Animal {
         }
     }
 
+
+
 }
