@@ -17,6 +17,11 @@ public class Ovelha extends Animal {
     
     //Metodos
     @Override
+    public boolean isOvelha(){
+        return true;
+    }
+    
+    @Override
     public void movimenta(Terreno mundo[][]) {
         
     }
