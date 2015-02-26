@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.ArrayList;
 
 public class Terreno {
-    private int  estadoVegetacao;
+    private int estadoVegetacao;
     private ArrayList<Animal> animal;
  
     //Construtores
@@ -37,6 +37,10 @@ public class Terreno {
  
     public void setAnimal(ArrayList<Animal> animal) {
         this.animal = animal;
+    }
+    
+    public void removeAnimal(Animal an){
+        animal.remove(animal.indexOf(an));
     }
 
     public int getEstadoVegetacao() {

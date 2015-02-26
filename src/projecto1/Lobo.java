@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Lobo extends Animal {
     
     private final float probNasc = (float)0.05;
-    private final int energiaInicial = 7;
+    private final int energiaInicial = 30;
     
     //Construtores
     public Lobo(int x,int y) {
