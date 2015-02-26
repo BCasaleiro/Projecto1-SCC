@@ -38,7 +38,7 @@ public abstract class Animal {
     }
     
     public void morte(Terreno mundo[][], ArrayList<Animal> animais) {
-        mundo[this.x - 1][this.y - 1].setAnimal(null);
+        mundo[this.x][this.y].setAnimal(null);
         animais.remove(this);
     }
     
