@@ -9,7 +9,8 @@ public class Ovelha extends Animal {
     private final int energiaInicial = 7;
     
     //Construtores
-    public Ovelha(){
+    public Ovelha(int x, int y){
+        super(x,y);
         Random rand = new Random();
         this.energia = rand.nextInt(energiaInicial);
     }
@@ -44,7 +45,12 @@ public class Ovelha extends Animal {
     }
     
     @Override
-    public void nascimento(Terreno[][] mundo) {
+    public void nascimento(Terreno[][] mundo, ArrayList<Animal> animais) {
+        if (nasce(probNasc)){
+            Ovelha item = new Ovelha(this.x,this.y);
+            animais.add(item);
+            mundo[this.x][this.y].getAnimal().add(item);
+        }
         
     }
     
