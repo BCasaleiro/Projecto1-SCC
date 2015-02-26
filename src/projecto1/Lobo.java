@@ -20,11 +20,14 @@ public class Lobo extends Animal {
     public void movimenta(Terreno mundo[][]) {
         
     }
-
     @Override
-    public void alimentaSe(Terreno[][] mundo, Animal animais) {
+    public boolean isOvelha(){
+        return false;
+    }
+    @Override
+    public void alimentaSe(Terreno[][] mundo, ArrayList<Animal> animais) {
         for (Animal a : animais){
-            
+            if ()
         }
     }
 }
