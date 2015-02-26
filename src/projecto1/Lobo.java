@@ -45,6 +45,15 @@ public class Lobo extends Animal {
         }
     }
 
+    @Override
+    public void nascimento(Terreno[][] mundo, ArrayList<Animal> animais) {
+        if (nasce(probNasc)){
+            Lobo item = new Lobo(this.x,this.y);
+            animais.add(item);
+            mundo[this.x][this.y].getAnimal().add(item);
+        }
+    }
+
 
 
 }
