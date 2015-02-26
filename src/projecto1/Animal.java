@@ -20,8 +20,8 @@ public abstract class Animal {
     
     //Metodos
     public abstract void movimenta(Terreno mundo[][]);
-    
     public abstract void alimentaSe(Terreno mundo[][]);
+    public abstract void alimentaSe(Terreno mundo[][], ArrayList<Animal> animais);
     
     public void decrementaEnergia() {
         this.energia--;
@@ -37,7 +37,8 @@ public abstract class Animal {
     }
     
     public void morte(Terreno mundo[][], ArrayList<Animal> animais) {
-        
+        mundo[this.x - 1][this.y - 1].setAnimal(null);
+        animais.remove(this);
     }
     
     //Sets & Gets
