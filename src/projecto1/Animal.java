@@ -1,14 +1,17 @@
 package projecto1;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public abstract class Animal {
     
     protected float energia;
+    protected int x, y;
     
     //Constructores
-    public Animal(float energia) {
-       this.energia = energia;
+    public Animal(int x, int y) {
+       this.x = x;
+       this.y = y;
     }
     
     public Animal(){
@@ -29,8 +32,12 @@ public abstract class Animal {
         return rand.nextFloat() < prob;
     }
     
-    public boolean morre() {
+    public boolean isMorto() {
         return this.energia <= 0; 
+    }
+    
+    public void morte(Terreno mundo[][], ArrayList<Animal> animais) {
+        
     }
     
     //Sets & Gets
@@ -40,5 +47,21 @@ public abstract class Animal {
 
     public void setEnergia(float energia) {
         this.energia = energia;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 }
