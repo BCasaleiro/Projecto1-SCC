@@ -44,7 +44,7 @@ public class Ovelha extends Animal {
     }
     
     @Override
-    public void nascimento(Terreno[][] mundo) {
+    public void nascimento(Terreno[][] mundo, ArrayList<Animal> animais) {
         
     }
     
