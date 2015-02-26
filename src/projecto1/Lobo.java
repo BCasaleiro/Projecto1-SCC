@@ -17,17 +17,22 @@ public class Lobo extends Animal {
 
     //Metodos
     @Override
-    public void movimenta(Terreno mundo[][]) {
-        
-    }
-    @Override
     public boolean isOvelha(){
         return false;
     }
+    
+    @Override
+    public void movimenta(Terreno mundo[][]) {
+        
+    }
+    
     @Override
     public void alimentaSe(Terreno[][] mundo, ArrayList<Animal> animais) {
         for (Animal a : animais){
-            if ()
+            if (isOvelha()){
+                
+            }
         }
     }
+
 }
