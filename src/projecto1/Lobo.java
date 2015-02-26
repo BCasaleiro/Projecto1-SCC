@@ -31,22 +31,15 @@ public class Lobo extends Animal {
         int auxX,auxY;     
         for (Animal a : animais){
             if (isOvelha()){
-                if (this.distancia(a)<= 1){
-                    auxX = a.getX();
-                    auxY = a.getY();
+                if (this.distancia(a)<= 0){
                     a.morte(mundo, animais);
-                    this.energia--;
-                    mundo[auxX][auxY].setAnimal(null);
-                    this.setX(auxX);
-                    this.setY(auxY);
-                    mundo[auxX][auxY].setAnimal(this);
                     if((this.energia + 20) >= 30){
-                        this.setEnergia(30);
+                        this.energia = 30;
                     }
                     else{
-                        this.setEnergia(energia + 20);
+                        this.energia += 20;
                     }
-                    
+                    return;
                 }
             }
         }
