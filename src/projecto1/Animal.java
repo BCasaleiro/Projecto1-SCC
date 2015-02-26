@@ -22,13 +22,18 @@ public abstract class Animal {
     //Metodos
     public abstract boolean isOvelha();
     public abstract void movimenta(Terreno mundo[][]);
+    public abstract void nascimento(Terreno mundo[][]);
     public abstract void alimentaSe(Terreno mundo[][], ArrayList<Animal> animais);
+    
+    public void adicionaEnergia(int energia) {
+        this.energia += energia;
+    }
     
     public void decrementaEnergia() {
         this.energia--;
     }
     
-    public boolean nascimento(float prob){
+    public boolean nasce(float prob){
         Random rand = new Random();
         return rand.nextFloat() < prob;
     }

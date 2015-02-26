@@ -1,10 +1,11 @@
 package projecto1;
 
 import java.util.Random;
+import java.util.ArrayList;
 
 public class Terreno {
     private int  estadoVegetacao;
-    private Animal animal;
+    private ArrayList<Animal> animal;
  
     //Construtores
     public Terreno() {
@@ -30,11 +31,11 @@ public class Terreno {
     } 
     
     //Sets & Gets
-    public Animal getAnimal() {
+    public ArrayList<Animal> getAnimal() {
         return animal;
     }
  
-    public void setAnimal(Animal animal) {
+    public void setAnimal(ArrayList<Animal> animal) {
         this.animal = animal;
     }
 
