@@ -21,11 +21,6 @@ public class Ovelha extends Animal {
     public boolean isOvelha(){
         return true;
     }
-    
-    @Override
-    public void movimenta(Terreno mundo[][]) {
-        
-    }
 
     @Override
     public void alimentaSe(Terreno[][] mundo, ArrayList<Animal> animais) {

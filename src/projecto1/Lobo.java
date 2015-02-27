@@ -22,11 +22,6 @@ public class Lobo extends Animal {
     }
     
     @Override
-    public void movimenta(Terreno mundo[][]) {
-        
-    }
-    
-    @Override
     public void alimentaSe(Terreno[][] mundo, ArrayList<Animal> animais) {
         int auxX,auxY;     
         for (Animal a : animais){
