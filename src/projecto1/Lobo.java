@@ -24,10 +24,10 @@ public class Lobo extends Animal {
     @Override
     public void alimentaSe(Terreno[][] mundo, ArrayList<Animal> animais) {
         int auxX,auxY;     
-        for (Animal a : animais){
-            if (isOvelha()){
-                if (this.distancia(a)<= 0){
-                    a.morte(mundo, animais);
+        for (int i = 0; i < animais.size(); i++){
+            if (animais.get(i).isOvelha()){
+                if (this.distancia(animais.get(i))<= 0){
+                    animais.get(i).morte(mundo, animais);
                     if((this.energia + 20) >= 30){
                         this.energia = 30;
                     }
