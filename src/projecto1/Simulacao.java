@@ -42,7 +42,7 @@ public class Simulacao {
         
         // Simular os turnos
         for(int tempo=0;tempo<tempoMax;tempo++){
-            System.out.println("Tempo: " + tempo + " Ovelhas: " + nOvelhas() + " Lobos: " + nLobos());
+            System.out.println("Tempo: " + tempo + " Ovelhas: " + nOvelhas() + " Lobos: " + nLobos() + " Vegetação no estado máximo: " + nTerreno());
             // Acho que o erro tem a ver com quando os lobos comem uma ovelha porque é apagada...
             // do ArrayList e causa um erro de modificação concurrente e quando o iterador tenta aceder
             // a ela, a ovelha ja nao existe
@@ -56,20 +56,35 @@ public class Simulacao {
             
             for(int loopX=0;loopX<tamanhoMundo;loopX++){
                 for(int loopY=0;loopY<tamanhoMundo;loopY++){
-                    if(mundo[loopX][loopY].isEstadoMax()==true){
+                    if(mundo[loopX][loopY].isEstadoMax()) {
                         for(Animal a: mundo[loopX][loopY].getAnimal()){
                             if(a.isOvelha()){
                                 a.alimentaSe(mundo,animais);
                                 break;
                             }
                         }
+                    } else {
+                        mundo[loopX][loopY].incrementaEstado();
                     }
                 }
             }
         }
     }
     
-    private int nLobos(){
+    private int nTerreno() {
+        int n = 0;
+        
+        for(int loopX=0;loopX<tamanhoMundo;loopX++){
+                for(int loopY=0;loopY<tamanhoMundo;loopY++){
+                    if(mundo[loopX][loopY].isEstadoMax()){
+                        n++;
+                    }
+                }
+            }
+        return n;
+    }
+    
+    private int nLobos() {
         int n = 0;
         for(Animal a: animais){
             if(!a.isOvelha()){
@@ -79,7 +94,7 @@ public class Simulacao {
         return n;
     }
     
-    private int nOvelhas(){
+    private int nOvelhas() {
         int n = 0;
         for(Animal a: animais){
             if(a.isOvelha()){

@@ -29,12 +29,23 @@ public class Ovelha extends Animal {
         if(nOvelhas > 1){
             for(Animal a: mundo[this.x][this.y].getAnimal()) {
                 if(a.isOvelha()){
-                    a.adicionaEnergia(4/nOvelhas);
+                    if((this.energia + (4/nOvelhas)) >= 7){
+                        this.energia = 7;
+                    } else{
+                        this.energia += 4/nOvelhas;
+                    }
                 }
             }
             mundo[this.x][this.y].vegetacaoComida();
         } else {
             this.energia += 4;
+            
+            if((this.energia + 4) >= 7){
+                this.energia = 7;
+            } else{
+                this.energia += 4;
+            }
+            
             mundo[this.x][this.y].vegetacaoComida();
         }
     }
