@@ -49,6 +49,9 @@ public class Simulacao {
             // Exception in thread "main" java.util.ConcurrentModificationException
             for(int i = 0; i < animais.size(); i++){
                 animais.get(i).movimenta(mundo,animais,tamanhoMundo);
+                if(animais.get(i).isMorto()){
+                    animais.get(i).morte(mundo, animais);
+                }
             }
             
             for(int loopX=0;loopX<tamanhoMundo;loopX++){
