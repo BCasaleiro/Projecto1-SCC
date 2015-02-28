@@ -42,7 +42,7 @@ public abstract class Animal {
     }
     
     public void morte(Terreno mundo[][], ArrayList<Animal> animais) {
-        mundo[this.x][this.y].setAnimal(null);
+        mundo[this.x][this.y].getAnimal().remove(this);
         animais.remove(this);
     }
     
@@ -115,7 +115,7 @@ public abstract class Animal {
     
     private int direcao() {
         Random rand = new Random();
-        return rand.nextInt(8);
+        return rand.nextInt(9);
     }
     
     //Sets & Gets
