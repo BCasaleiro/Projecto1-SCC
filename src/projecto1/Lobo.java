@@ -12,7 +12,7 @@ public class Lobo extends Animal {
     public Lobo(int x,int y) {
         super(x,y);
         Random rand = new Random();
-        this.energia = rand.nextInt(energiaInicial);
+        this.energia = rand.nextInt(energiaInicial+1);
     }
 
     //Metodos

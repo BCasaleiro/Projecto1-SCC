@@ -12,7 +12,7 @@ public class Ovelha extends Animal {
     public Ovelha(int x, int y){
         super(x,y);
         Random rand = new Random();
-        this.energia = rand.nextInt(energiaInicial);
+        this.energia = rand.nextInt(energiaInicial+1);
     }
 
     

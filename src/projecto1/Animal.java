@@ -60,45 +60,52 @@ public abstract class Animal {
                     mundo[this.x][this.y].getAnimal().remove(this);
                     this.x = (this.x + 1) % tamanhoMundo;
                     mundo[this.x][this.y].getAnimal().add(this);
+                    valido = true;
                 }
             } else if (dir == 1) {
-                if(mundo[(this.x + 1) % tamanhoMundo][Math.round((this.y - 1) % tamanhoMundo)].getAnimal() != null) {
+                if(mundo[(this.x + 1) % tamanhoMundo][Math.abs((this.y - 1) % tamanhoMundo)].getAnimal() != null) {
                     mundo[this.x][this.y].getAnimal().remove(this);
                     this.x = (this.x + 1) % tamanhoMundo;
-                    this.y = Math.round((this.y - 1) % tamanhoMundo);
+                    this.y = Math.abs((this.y - 1) % tamanhoMundo);
                     mundo[this.x][this.y].getAnimal().add(this);
+                    valido = true;
                 }
             } else if (dir == 2) {
-                if(mundo[this.x % tamanhoMundo][Math.round((this.y - 1) % tamanhoMundo)].getAnimal() != null) {
+                if(mundo[this.x % tamanhoMundo][Math.abs((this.y - 1) % tamanhoMundo)].getAnimal() != null) {
                     mundo[this.x][this.y].getAnimal().remove(this);
-                    this.y = Math.round((this.y - 1) % tamanhoMundo);
+                    this.y = Math.abs((this.y - 1) % tamanhoMundo);
                     mundo[this.x][this.y].getAnimal().add(this);
+                    valido = true;
                 }
             } else if (dir == 3) {
-                if(mundo[Math.round((this.x - 1) % tamanhoMundo)][Math.round((this.y - 1) % tamanhoMundo)].getAnimal() != null) {
+                if(mundo[Math.abs((this.x - 1) % tamanhoMundo)][Math.abs((this.y - 1) % tamanhoMundo)].getAnimal() != null) {
                     mundo[this.x][this.y].getAnimal().remove(this);
-                    this.x = Math.round((this.x - 1) % tamanhoMundo);
-                    this.y = Math.round((this.y - 1) % tamanhoMundo);
+                    this.x = Math.abs((this.x - 1) % tamanhoMundo);
+                    this.y = Math.abs((this.y - 1) % tamanhoMundo);
                     mundo[this.x][this.y].getAnimal().add(this);
+                    valido = true;
                 }
             } else if (dir == 4) {
-                if(mundo[Math.round((this.x - 1) % tamanhoMundo)][this.y].getAnimal() != null) {
+                if(mundo[Math.abs((this.x - 1) % tamanhoMundo)][this.y].getAnimal() != null) {
                     mundo[this.x][this.y].getAnimal().remove(this);
-                    this.x = Math.round((this.x - 1) % tamanhoMundo);
+                    this.x = Math.abs((this.x - 1) % tamanhoMundo);
                     mundo[this.x][this.y].getAnimal().add(this);
+                    valido = true;
                 }
             } else if (dir == 5) {
-                if(mundo[Math.round((this.x - 1) % tamanhoMundo)][(this.y + 1) % tamanhoMundo].getAnimal() != null) {
+                if(mundo[Math.abs((this.x - 1) % tamanhoMundo)][(this.y + 1) % tamanhoMundo].getAnimal() != null) {
                     mundo[this.x][this.y].getAnimal().remove(this);
-                    this.x = Math.round((this.x - 1) % tamanhoMundo);
+                    this.x = Math.abs((this.x - 1) % tamanhoMundo);
                     this.y = (this.y + 1) % tamanhoMundo;
                     mundo[this.x][this.y].getAnimal().add(this);
+                    valido = true;
                 }
             } else if (dir == 6) {
                 if(mundo[this.x][(this.y + 1) % tamanhoMundo].getAnimal() != null) {
                     mundo[this.x][this.y].getAnimal().remove(this);
                     this.y = (this.y + 1) % tamanhoMundo;
                     mundo[this.x][this.y].getAnimal().add(this);
+                    valido = true;
                 }
             } else if (dir == 7) {
                 if(mundo[(this.x + 1) % tamanhoMundo][(this.y + 1) % tamanhoMundo].getAnimal() != null) {
@@ -106,9 +113,13 @@ public abstract class Animal {
                     this.x = (this.x + 1) % tamanhoMundo;
                     this.y = (this.y + 1) % tamanhoMundo;
                     mundo[this.x][this.y].getAnimal().add(this);
+                    valido = true;
                 }
+            } else if (dir == 8) {
+                valido = true;
             }
         }
+        this.decrementaEnergia();
         this.nascimento(mundo, animais);
         if(!isOvelha()) {
             this.alimentaSe(mundo, animais);

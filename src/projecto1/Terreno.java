@@ -9,6 +9,7 @@ public class Terreno {
  
     //Construtores
     public Terreno() {
+        this.animal = new ArrayList<Animal>();
         Random rand = new Random();
         if(rand.nextFloat() > 0.5) {
             estadoVegetacao = 30;
@@ -37,10 +38,6 @@ public class Terreno {
  
     public void setAnimal(ArrayList<Animal> animal) {
         this.animal = animal;
-    }
-    
-    public void removeAnimal(Animal an){
-        animal.remove(animal.indexOf(an));
     }
 
     public int getEstadoVegetacao() {
