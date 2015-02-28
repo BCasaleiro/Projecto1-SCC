@@ -42,7 +42,7 @@ public class Simulacao {
         
         // Simular os turnos
         for(int tempo=0;tempo<tempoMax;tempo++){
-            System.out.println("Tempo: " + tempo);
+            System.out.println("Tempo: " + tempo + " Ovelhas: " + nOvelhas() + " Lobos: " + nLobos());
             // Acho que o erro tem a ver com quando os lobos comem uma ovelha porque é apagada...
             // do ArrayList e causa um erro de modificação concurrente e quando o iterador tenta aceder
             // a ela, a ovelha ja nao existe
@@ -66,5 +66,23 @@ public class Simulacao {
         }
     }
     
+    private int nLobos(){
+        int n = 0;
+        for(Animal a: animais){
+            if(!a.isOvelha()){
+                n++;
+            }
+        }
+        return n;
+    }
     
+    private int nOvelhas(){
+        int n = 0;
+        for(Animal a: animais){
+            if(a.isOvelha()){
+                n++;
+            }
+        }
+        return n;
+    }
 }
