@@ -110,7 +110,9 @@ public abstract class Animal {
             }
         }
         this.nascimento(mundo, animais);
-        this.alimentaSe(mundo, animais);
+        if(!isOvelha()) {
+            this.alimentaSe(mundo, animais);
+        }
     }
     
     private int direcao() {
