@@ -115,7 +115,7 @@ public abstract class Animal {
     
     private int direcao() {
         Random rand = new Random();
-        return rand.nextInt(9);
+        return rand.nextInt(8);
     }
     
     //Sets & Gets

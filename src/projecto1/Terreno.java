@@ -13,7 +13,7 @@ public class Terreno {
         if(rand.nextFloat() > 0.5) {
             estadoVegetacao = 30;
         } else {
-            estadoVegetacao = rand.nextInt(30);
+            estadoVegetacao = rand.nextInt(30) + 1;
         }
     }
     
