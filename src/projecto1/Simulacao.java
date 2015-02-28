@@ -42,14 +42,15 @@ public class Simulacao {
         
         // Simular os turnos
         for(int tempo=0;tempo<tempoMax;tempo++){
-            System.out.println("oi");
+            System.out.println("Tempo: " + tempo);
             // Acho que o erro tem a ver com quando os lobos comem uma ovelha porque é apagada...
             // do ArrayList e causa um erro de modificação concurrente e quando o iterador tenta aceder
             // a ela, a ovelha ja nao existe
             // Exception in thread "main" java.util.ConcurrentModificationException
-            for(Animal a : animais){
-                a.movimenta(mundo,animais,tamanhoMundo);
+            for(int i = 0; i < animais.size(); i++){
+                animais.get(i).movimenta(mundo,animais,tamanhoMundo);
             }
+            
             for(int loopX=0;loopX<tamanhoMundo;loopX++){
                 for(int loopY=0;loopY<tamanhoMundo;loopY++){
                     if(mundo[loopX][loopY].isEstadoMax()==true){
