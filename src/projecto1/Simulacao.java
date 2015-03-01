@@ -22,7 +22,7 @@ public class Simulacao {
             }
         }
         
-        // Criar e colocar os casaleiros/animais
+        // Criar e colocar os animais
         int x,y;
         Random rand = new Random();
         for(int i=0;i<(nOvelhas);i++){
@@ -43,10 +43,6 @@ public class Simulacao {
         // Simular os turnos
         for(int tempo=0;tempo<tempoMax;tempo++){
             System.out.println("Tempo: " + tempo + " Ovelhas: " + nOvelhas() + " Lobos: " + nLobos() + " Vegetação no estado máximo: " + nTerreno());
-            // Acho que o erro tem a ver com quando os lobos comem uma ovelha porque é apagada...
-            // do ArrayList e causa um erro de modificação concurrente e quando o iterador tenta aceder
-            // a ela, a ovelha ja nao existe
-            // Exception in thread "main" java.util.ConcurrentModificationException
             for(int i = 0; i < animais.size(); i++){
                 animais.get(i).movimenta(mundo,animais,tamanhoMundo);
                 if(animais.get(i).isMorto()){
