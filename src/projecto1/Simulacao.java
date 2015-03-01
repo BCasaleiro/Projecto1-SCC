@@ -1,5 +1,6 @@
 package projecto1;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -12,9 +13,18 @@ public class Simulacao {
     
     private ArrayList<Animal> animais = new ArrayList<Animal>();
     private Terreno[][] mundo = new Terreno[tamanhoMundo][tamanhoMundo];
-    private int tempo = 0;
+    private int tempo = 1;
 
-    public Simulacao() {
+    public Simulacao() throws IOException {
+        
+        // Abrir escrita para ficheiros
+        Ficheiros escLobos = new Ficheiros();
+        Ficheiros escVeg = new Ficheiros();
+        Ficheiros escOv = new Ficheiros();
+        escLobos.abreEscrita("Lobos.txt");
+        escOv.abreEscrita("Vegetacao estado maximo.txt");
+        escVeg.abreEscrita("Ovelhas.txt");
+        
         // Inicializar celulas do terreno
         for(int abc=0;abc<tamanhoMundo;abc++){
             for(int cba=0;cba<tamanhoMundo;cba++){
@@ -41,8 +51,11 @@ public class Simulacao {
         }
         
         // Simular os turnos
-        for(int tempo=0;tempo<tempoMax;tempo++){
+        for(int tempo=1;tempo<=tempoMax;tempo++){
             System.out.println("Tempo: " + tempo + " Ovelhas: " + nOvelhas() + " Lobos: " + nLobos() + " Vegetação no estado máximo: " + nTerreno());
+            escLobos.escreveLinha(Integer.toString(nLobos()));
+            escOv.escreveLinha(Integer.toString(nOvelhas()));
+            escVeg.escreveLinha(Integer.toString(nTerreno()));
             for(int i = 0; i < animais.size(); i++){
                 animais.get(i).movimenta(mundo,animais,tamanhoMundo);
                 if(i < animais.size()) {    
@@ -67,7 +80,14 @@ public class Simulacao {
                 }
             }
         }
+        
+        // Fechar escrita de ficheiros
+        escLobos.fechaEscrita();
+        escVeg.fechaEscrita();
+        escOv.fechaEscrita();
     }
+    
+    // Funções auxiliares
     
     private int nTerreno() {
         int n = 0;
