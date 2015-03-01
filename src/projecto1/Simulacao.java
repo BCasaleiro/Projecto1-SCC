@@ -22,8 +22,8 @@ public class Simulacao {
         Ficheiros escVeg = new Ficheiros();
         Ficheiros escOv = new Ficheiros();
         escLobos.abreEscrita("Lobos.txt");
-        escOv.abreEscrita("Vegetacao estado maximo.txt");
-        escVeg.abreEscrita("Ovelhas.txt");
+        escOv.abreEscrita("Ovelhas.txt");
+        escVeg.abreEscrita("Vegetacao estado maximo.txt");
         
         // Inicializar celulas do terreno
         for(int abc=0;abc<tamanhoMundo;abc++){

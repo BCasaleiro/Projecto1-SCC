@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Ovelha extends Animal {
     
-    private final float probNasc = (float) 0.04;
+    private final float probNasc = (float) 0.05;
     private final int energiaInicial = 7;
     
     //Construtores
